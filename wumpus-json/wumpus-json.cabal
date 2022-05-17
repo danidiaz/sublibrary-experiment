@@ -1,0 +1,38 @@
+cabal-version:      3.6
+name:               wumpus-json
+version:            0.1.0.0
+synopsis:
+
+-- A longer description of the package.
+-- description:
+homepage:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Daniel Diaz
+maintainer:         diaz.carrete@yahoo.es
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:  WumpusJson
+    build-depends:    base ^>=4.16.1.0, 
+                      wumpus ^>= 0.1.0.0,
+    hs-source-dirs:   lib
+    default-language: Haskell2010
+
+test-suite wumpus-json-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          WumpusJsonTest.hs
+    build-depends:    base ^>=4.16.1.0,
+                      wumpus-json,
+                      wumpus ^>= 0.1.0.0,
+                      wumpus:wumpus-test-support ^>= 0.1.0.0,
+

@@ -1,0 +1,43 @@
+cabal-version:      3.6
+name:               wumpus
+version:            0.1.0.0
+synopsis:
+
+-- A longer description of the package.
+-- description:
+homepage:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Daniel Diaz
+maintainer:         diaz.carrete@yahoo.es
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:  Wumpus
+    build-depends:    base ^>=4.16.1.0
+    hs-source-dirs:   lib
+    default-language: Haskell2010
+
+library wumpus-test-support
+    exposed-modules:  WumpusTestSupport
+    build-depends:    base ^>=4.16.1.0
+    hs-source-dirs:   lib-test-support
+    visibility:       public
+    default-language: Haskell2010
+
+test-suite wumpus-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          WumpusTest.hs
+    build-depends:    base ^>=4.16.1.0,
+                      wumpus,
+                      wumpus-test-support
+
