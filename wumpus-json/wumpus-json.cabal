@@ -34,5 +34,8 @@ test-suite wumpus-json-test
     build-depends:    base ^>=4.16.1.0,
                       wumpus-json,
                       wumpus ^>= 0.1.0.0,
+                      -- The wumpus package exports two libraries!  
+                      -- For testing purposes, 
+                      -- we also depend on the public sublibary.
                       wumpus:wumpus-test-support ^>= 0.1.0.0,
 

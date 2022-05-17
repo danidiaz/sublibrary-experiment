@@ -27,8 +27,16 @@ library
 
 library wumpus-test-support
     exposed-modules:  WumpusTestSupport
-    build-depends:    base ^>=4.16.1.0
+    build-depends:    base ^>=4.16.1.0,
+                      -- This is a bogus unsatisfiable constraint on aeson. Introducing it
+                      -- makes "cabal build lib:wumpus-json" fail, which is disappointing,
+                      -- because lib:wumpus-json doesn't really use wumpus-test-support.
+                      --
+                      -- aeson >= 13.0.0.0,
+                      wumpus,
+     
     hs-source-dirs:   lib-test-support
+    -- This is the bit that maskes the internal support library public.
     visibility:       public
     default-language: Haskell2010
 
