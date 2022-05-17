@@ -1,4 +1,5 @@
 cabal-version:      3.6
+-- the high cabal-version is required for public sublibraries to work.
 name:               wumpus-json
 version:            0.1.0.0
 synopsis:
